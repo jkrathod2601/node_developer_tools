@@ -1,0 +1,82 @@
+[
+    {
+        "method": "get",
+        "path": "/user",
+        "controller": "userc.done",
+        "middlewares": [
+            "auth.validate",
+            "auth.check"
+        ],
+        "access":[
+            "admin"
+        ],
+        "isgloblal":true
+    },
+    {
+        "method": "post",
+        "path": "/user",
+        "controller": "usercontroller.done1",
+        "middlewares": [
+            "auth.validate",
+            "auth.check"
+        ],
+        "access":[
+            
+        ],
+        "isgloblal":true
+    },
+    {
+        "method": "post",
+        "path": "/userlogin",
+        "controller": "usercontroller.done2",
+        "middlewares": [
+            "auth.validate",
+            "auth.check"
+        ],
+        "access":[
+            "student",
+            "teacher"
+        ],
+        "isgloblal":true
+    },
+    {
+        "method": "post",
+        "path": "/fileadd",
+        "controller": "userc.formdata",
+        "middlewares": [
+            "auth.validate"
+        ],
+        "access":[
+            "admin",
+            "teacher",
+            "student"
+        ],
+        "isgloblal":true
+    }
+    ,{
+        "method": "get",
+        "path": "/ip",
+        "controller": "userc.getip",
+        "middlewares": [
+            "auth.validate"
+        ],
+        "access":[
+            
+        ],
+        "isgloblal":true
+    },
+    {
+        "method": "get",
+        "path": "/giveloginpage",
+        "controller": "userc.giveloginpage",
+        "middlewares": [
+            "auth.validate"
+        ],
+        "access":[
+            
+        ],
+        "isgloblal":false
+    }
+]
+
+

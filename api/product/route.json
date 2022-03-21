@@ -1,0 +1,77 @@
+[
+    {
+        "method": "get",
+        "path": "/products",
+        "controller": "productcontroller.getproduct",
+        "middlewares": [
+            "auth.validate",
+            "auth.check"
+        ],
+        "access":[
+           "admin"
+        ],
+        "isgloblal":true
+    },
+    {
+        "method": "post",
+        "path": "/products",
+        "controller": "productcontroller.addproduct",
+        "middlewares": [
+            "auth.validate",
+            "auth.check"
+        ],
+        "access":[
+            "admin"
+        ],
+        "isgloblal":true
+    },
+    {
+        "method": "delete",
+        "path": "/products/:id",
+        "controller": "productcontroller.deleteproduct",
+        "middlewares": [
+            "auth.validate"
+        ],
+        "access":[
+            "admin"
+        ],
+        "isgloblal":true
+    },
+    {
+        "method": "put",
+        "path": "/products/:id",
+        "controller": "productcontroller.updateproduct",
+        "middlewares": [
+            "auth.validate"
+        ],
+        "access":[
+            "admin"
+        ],
+        "isgloblal":true
+    },
+    {
+        "method": "get",
+        "path": "/products/:id",
+        "controller": "productcontroller.singleproduct",
+        "middlewares": [
+            "auth.validate"
+        ],
+        "access":[
+            "admin"
+        ],
+        "isgloblal":true
+    },
+    {
+        "method": "get",
+        "path": "/authgoogle",
+        "controller": "passport.authwithgoogle",
+        "middlewares": [
+            "auth.validate",
+            "auth.check"
+        ],
+        "access":[
+            
+        ],
+        "isgloblal":true
+    }
+]

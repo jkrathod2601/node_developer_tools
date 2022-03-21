@@ -1,0 +1,45 @@
+const path = require('path');
+const fs=require('fs');
+const reader = require("readline-sync");
+
+
+
+async function run(){
+    try{
+        let answer = reader.question("are you ready to store data into root folder? yes / no ?");
+            if(answer=="no"){
+                let obj_module={}
+                fs.readdirSync(path.join(__dirname, "./api")).
+                forEach((ele,i)=>{
+                    console.log(`${ele}------>${i}`)
+                    obj_module[i]=ele
+                })
+                let answer = reader.question("in which module you want to store insert the number?")
+                module.exports={
+                    'config': path.resolve('config', './config/config.json'),
+                    'models-path': path.resolve(`./api/${obj_module[answer]}`, 'models'),
+                    'seeders-path': path.resolve(`./api/${obj_module[answer]}`, 'seeders'),
+                    'migrations-path': path.resolve(`./api/${obj_module[answer]}`, 'migrations')
+                }
+            }else{
+                module.exports={
+                    'config': path.resolve('config', './config/config.json'),
+                    'models-path': path.resolve(`./database/`, 'models'),
+                    'seeders-path': path.resolve(`./database/`, 'seeders'),
+                    'migrations-path': path.resolve(`./database/`, 'migrations')
+                }
+            }
+    }catch(err){
+        console.log(framework.chalk.red("check your module number"))
+    }
+}
+run()
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+{
+  "name": "node-setup",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "add_module": "node ./bin/command/add_module.js",
+    "list_cmd": "node ./bin/command/list_command.js",
+    "add_auth": "node ./bin/command/add_auth.js"
+  },
+  "dependencies": {
+    "@supercharge/request-ip": "^1.2.0",
+    "axios": "^0.26.1",
+    "chalk": "^4.1.1",
+    "cookie-parser": "~1.4.4",
+    "cookie-session": "^2.0.0",
+    "cors": "^2.8.5",
+    "csurf": "^1.11.0",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.0",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-session": "^1.17.2",
+    "http-errors": "~1.6.3",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.4",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.15",
+    "passport": "^0.5.2",
+    "passport-google-oauth20": "^2.0.0",
+    "prompt-radio": "^1.2.1",
+    "prompt-sync": "^4.2.0",
+    "readline-sync": "^1.4.10",
+    "sequelize": "^6.17.0",
+    "umzug": "^3.0.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.4.1"
+  },
+  "bin": {
+    "add-module": "./bin/cli.js"
+  }
+}
